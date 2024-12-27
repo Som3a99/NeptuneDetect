@@ -15,7 +15,7 @@ import dotenv
 from pathlib import Path
 from collections import deque
 import subprocess
-
+import ffmpeg 
 
 dotenv.load_dotenv()
 
@@ -64,7 +64,7 @@ def _display_detected_frames(conf, model, st_frame, image):
     processing_time = time.time() - start_time
     
     # Display the processed frame
-    st_frame.image(res_plotted, caption='Detected Frame', channels="BGR", use_column_width=True)
+    st_frame.image(res_plotted, caption='Detected Frame', channels="BGR", use_container_width=True)
     
     return total_objects, detection_summary, processing_time
 
@@ -82,7 +82,7 @@ def infer_uploaded_image(conf, model):
     with col1:
         if source_img:
             uploaded_image = Image.open(source_img)
-            st.image(source_img, caption="Uploaded Image", use_column_width=True)
+            st.image(source_img, caption="Uploaded Image",  use_container_width=True)
 
     if source_img and st.button("Execute Detection"):
         with st.spinner("Processing image..."):
@@ -95,7 +95,7 @@ def infer_uploaded_image(conf, model):
             processing_time = time.time() - start_time
             
             with col2:
-                st.image(res_plotted, caption="Detected Image", use_column_width=True)
+                st.image(res_plotted, caption="Detected Image",  use_container_width=True)
                 
                 # Display detection statistics
                 st.write("### Detection Results")
