@@ -219,38 +219,6 @@ def infer_uploaded_video(conf, model):
                 st.error(f"Error processing video: {str(e)}")
 
 
-class Detection(NamedTuple):
-    class_name: str
-    confidence: float
-    bbox: tuple
-
-class VideoTransformer(VideoTransformerBase):
-    def __init__(self, model, confidence):
-        self.model = model
-        self.confidence = confidence
-        self.detections: List[Detection] = []
-        self.frame = None
-        
-    def transform(self, frame):
-        img = frame.to_ndarray(format="bgr24")
-        self.frame = img.copy()
-        results = self.model.predict(img, conf=self.confidence)[0]
-        
-        self.detections = []
-        for box in results.boxes:
-            class_id = int(box.cls[0])
-            conf = float(box.conf[0])
-            bbox = box.xyxy[0].tolist()
-            
-            self.detections.append(Detection(
-                class_name=self.model.names[class_id],
-                confidence=conf,
-                bbox=bbox
-            ))
-        
-        annotated_frame = results.plot()
-        return av.VideoFrame.from_ndarray(annotated_frame, format="bgr24")
-
 def infer_uploaded_webcam_cloud(conf, model):
     """
     Cloud version of webcam detection - shows a friendly message

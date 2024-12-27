@@ -47,7 +47,7 @@ python-dotenv==1.0.0
 ### 🔧 Setup Steps
 1. 📥 **Clone Repository**:
    ```bash
-   git clone https://github.com/yourusername/deepscan.git
+   git clone https://github.com/Som3a99/NeptuneDetect.git
    cd deepscan
    ```
 
@@ -67,6 +67,9 @@ python-dotenv==1.0.0
 ### 💻 Local Setup (Full Version)
 1. 🔑 Set environment:
    ```bash
+   # 🪟 Windows
+   set IS_LOCAL=true
+   # 🐧 Linux/Mac
    export IS_LOCAL=true
    ```
 
@@ -78,7 +81,7 @@ python-dotenv==1.0.0
 3. 🌐 Visit: `http://localhost:8501`
 
 ### ☁️ Cloud Setup (Static Detection Only)
-- 🌐 Visit: `http://localhost:8501`
+- 🌐 Visit: `https://neptunedetect.streamlit.app/`
 
 ## 🎮 Usage Guide
 1. 🎯 **Model Settings**:
@@ -144,7 +147,7 @@ deepscan/
 
 ## 📫 Contact
 - 📧 Email: [Mohamed_EMohamed@outlook.com]
-- 💬 GitHub Issues: [link]
+- 💬 GitHub Issues: [[link](https://github.com/Som3a99/NeptuneDetect/issues)]
 
 ---
 <div align="center">

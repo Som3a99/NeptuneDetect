@@ -9,14 +9,14 @@ IS_LOCAL = os.environ.get('IS_LOCAL', 'false').lower() == 'true'
 
 # setting page layout
 st.set_page_config(
-    page_title="Interactive Interface for YOLOv8",
-    page_icon="🤖",
+    page_title="Deep Sea Vision",
+    page_icon="🌊",
     layout="wide",
     initial_sidebar_state="expanded"
     )
 
 # main page heading
-st.title("Interactive Interface for YOLOv8")
+st.title("Underwater Object Detection")
 
 # sidebar
 st.sidebar.header("DL Model Config")
