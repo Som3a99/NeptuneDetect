@@ -7,3 +7,4 @@ av
 typing
 numpy
 torch
+ffmpeg-python
