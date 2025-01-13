@@ -3,6 +3,5 @@
 __pycache__
 
 # weights folder
-weights
 .env
 captures
