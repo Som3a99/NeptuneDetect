@@ -18,6 +18,9 @@ st.set_page_config(
 # main page heading
 st.title("Underwater Object Detection")
 
+# Add logo to sidebar
+st.sidebar.image('logo.png', width=100)  # Adjust width as needed
+
 # sidebar
 st.sidebar.header("DL Model Config")
 
